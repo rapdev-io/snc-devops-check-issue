@@ -1,0 +1,10 @@
+name: 'Check Issue for Approval'
+description: 'Check if a closed issue is a servicenow devops issue, and handle appropriately'
+
+inputs:
+  context-env:
+    description: 'env context'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

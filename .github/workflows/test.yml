@@ -1,0 +1,27 @@
+name: test
+
+env:
+  INSTANCE_NAME: ${{ secrets.INSTANCE_NAME }}
+  DEVOPS_INTEGRATION_USER_NAME: ${{ secrets.DEVOPS_INTEGRATION_USER_NAME }}
+  DEVOPS_INTEGRATION_USER_PASS: ${{ secrets.DEVOPS_INTEGRATION_USER_PASS }}
+  TOOL_ID: ${{ secrets.DEVOPS_TOOL_ID }}
+  ISSUE_NAME: 'DevOps orchestrationTask:test#create-execution, action:build_test, build number:53'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: validate-issue
+        id: validate-issue
+        uses: ./
+        with:
+          context-env: ${{ toJSON(env) }}
+          
+      - name: print the result of test-action
+        run: echo "Result of issue checker -- ${{ steps.validate-issue.outputs.changeFound }}"
+    

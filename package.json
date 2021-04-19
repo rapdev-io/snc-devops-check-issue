@@ -1,0 +1,25 @@
+{
+  "name": "snc-devops-check-issue",
+  "version": "1.0.0",
+  "description": "Issue Checker For ServiceNow Devops Integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rapdev-io/snc-devops-check-issue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rapdev-io/snc-devops-check-issue/issues"
+  },
+  "homepage": "https://github.com/rapdev-io/snc-devops-check-issue#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "@vercel/ncc": "^0.28.3",
+    "axios": "^0.21.1"
+  }
+}
